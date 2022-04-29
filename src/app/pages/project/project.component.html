@@ -1,0 +1,106 @@
+<div class="p-3">
+  <div class="row p-2">
+    <div class="col-lg-3">
+      <input type="text" class="form-control" placeholder="search..">
+    </div>
+    <div class="col-lg-4 position-right">
+      <button class="btn btn-primary" (click)="onClick()">Project</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-12">
+      <table class="table table-stripped">
+        <thead>
+          <th>Clients & Projects</th>
+          <th>Total budget</th>
+          <th>Budget spent</th>
+          <th>Budge remaining</th>
+          <th>Cost</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of projectList">
+            <td>{{item.client.name}}</td>
+            <tr *ngFor="let list of item.project">
+              <td>-</td>
+              <td>{{list.tb}}</td>
+              <td>{{list.bs}}</td>
+              <td>{{list.br}}</td>
+              <td>{{list.cost}}</td>
+              <td>
+                <i class="fa fa-pencil"></i>
+                <i class="fa fa-trash"></i>
+              </td>
+            </tr>
+          </ng-container>
+          <td></td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- 
+<ng-template #sideBar>
+
+</ng-template> -->
+
+<div id="mySidenav" class="sidenav">
+  <div class="modal-header ">
+    <h3>New Project</h3>
+    <button class="btn" (click)="closeNav()">x</button>
+  </div>
+  <div class="modal-body">
+    <nav class="navbar navbar-expand-lg">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <ng-container *ngFor="let menu of headerMenu">
+            <li class="nav-item" role="presentation" [ngClass]="menu.name == 'Invoices' ? 'active': ''">
+              <button class="nav-link btn">{{menu.name}}</button>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </nav>
+    <div class="row">
+        <button class="btn"> <-- Back to invoicelist</button>
+    </div>
+    <div class="row m-0 p-3">
+      <div class="col-2 label">
+        <label for="" class="">To</label>
+      </div>
+      <div class="col-10">
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row m-0 p-3">
+      <div class="col-2 label">
+        <label for="" class="">Subject</label>
+      </div>
+      <div class="col-10">
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row m-0 p-3">
+      <div class="col-2 label">
+        <label for="" class="">Message</label>
+      </div>
+      <div class="col-10">
+        <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+        <ngx-editor [editor]="editor" [ngModel]="data" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+        <!-- <textarea type="text" rows="5" class="form-control"></textarea> -->
+      </div>
+    </div>
+    <div class="row m-0 p-3">
+      <div class="col-2 label">
+        <label for="" class="">Attachment</label>
+      </div>
+      <div class="col-10">
+        <input type="file" class="form-control p-1">
+      </div>
+    </div>
+    <div class="row btn-position m-2">
+      <button class="btn btn-secandory" (click)="closeNav()">Cancel</button>
+      <button class="btn btn-send">Send</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+// .modal.right.fade {
+//     .modal-dialog {
+//      right: -320px;
+//      transition: opacity 0.3s linear, right 0.3s ease-out;
+//      transition: opacity 0.3s linear, right 0.3s ease-out;
+//      transition: opacity 0.3s linear, right 0.3s ease-out;
+//      transition: opacity 0.3s linear, right 0.3s ease-out;
+//    }
+// }
+
+// .modal.right.fade.in .modal-dialog {
+//   right: 0;
+// }
+
+// /* ----- MODAL STYLE ----- */
+// .modal-content {
+//   border-radius: 0;
+//   border: none;
+// }
+
+// .modal-header {
+//   border-bottom-color: #EEEEEE;
+//   background-color: #FAFAFA;
+// }
+.wrapper {
+//   position: relative;
+  overflow: hidden;
+}
+
+.slide {
+//   position: absolute;
+  right: -300px;
+  width: 100%;
+  height: 370px;
+  -webkit-animation: slide 0.5s forwards;
+  animation: slide 0.5s forwards;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    right: 0;
+  }
+}
